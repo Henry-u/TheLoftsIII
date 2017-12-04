@@ -1,0 +1,71 @@
+[2017-11-20 22:30:29 CST] <Thread-10>  INFO: Logging to file: E:\project\TheLoftsIII\unpackage\release\H57463E79_1120220216.ipa_1711202230.log
+[2017-11-20 22:30:29 CST] <Thread-10>  INFO: Logging configured successfully.
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: iTMSTransporter : iTunes Store Transporter [1.9.4]
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: OS identifier: Windows 10 10.0 (amd64); jvm=25.121-b13; jre=1.8.0_121-b13
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: Memory: [JVM] 33M free, 89M total, 1751M max [System] (Physical) 3102M free, 7879M total (Swap) 9562M free, 15815M total
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: Upload mode selected.
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: Examining the package at: C:\Users\Henry\AppData\Local\Temp\au\itmsp\1291821910.itmsp
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: Ensuring that package has well formed metadata file...
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: Gathering the list of valid files from the package ...
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: Finished gathering the list of valid files from the package.
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: Verify progress: Analyzing metadata (Step 0/?)
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: Performing authentication of package 1291821910.itmsp ...
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: Verify progress: Analyzing metadata (Step 1/2)
+[2017-11-20 22:30:31 CST] <Thread-10>  INFO: id = 20171120223031-026
+[2017-11-20 22:30:33 CST] <Thread-10>  INFO: id = 20171120223033-791
+[2017-11-20 22:30:34 CST] <Thread-10>  INFO: The list of files requested for upload by Apple is: [metadata.xml, 1291821910.ipa].  These are the files that will be uploaded.
+[2017-11-20 22:30:34 CST] <Thread-10>  INFO: Starting media analysis of assets
+[2017-11-20 22:30:36 CST] <Thread-10>  INFO: Verify progress: Adding asset to analyze: 1291821910.ipa (Step 2/3)
+[2017-11-20 22:30:36 CST] <Thread-10>  INFO: Asset media analysis has completed
+[2017-11-20 22:30:36 CST] <Thread-10>  INFO: id = 20171120223036-697
+[2017-11-20 22:30:42 CST] <Thread-10>  INFO: Verify progress: Validating assets (Step 3/3)
+[2017-11-20 22:30:42 CST] <Thread-10>  INFO: Verify progress: Validating assets (Step 4/3)
+[2017-11-20 22:30:42 CST] <Thread-10>  INFO: id = 20171120223042-093
+[2017-11-20 22:30:44 CST] <Thread-10>  INFO: The list of files requested for upload by Apple is: [metadata.xml, 1291821910.ipa].  These are the files that will be uploaded.
+[2017-11-20 22:30:44 CST] <Thread-10>  INFO: Done performing authentication.
+[2017-11-20 22:30:44 CST] <Thread-10>  INFO: The asset replacement verification check is disabled.
+[2017-11-20 22:30:44 CST] <Thread-10>  INFO: Checking the file size of the files: [1291821910.ipa]
+[2017-11-20 22:30:44 CST] <Thread-10>  INFO: Done checking the file sizes.
+[2017-11-20 22:30:44 CST] <Thread-10>  INFO: Checking the md5 checksum of the files: [1291821910.ipa]
+[2017-11-20 22:30:45 CST] <Thread-10>  INFO: Done checking the md5 checksum.
+[2017-11-20 22:30:45 CST] <Thread-10>  INFO: Preparing to upload package 1291821910.itmsp ...
+[2017-11-20 22:30:45 CST] <Thread-10>  INFO: Starting to upload the package's files (1291821910.itmsp) ...
+[2017-11-20 22:30:45 CST] <Thread-10>  INFO: Attempting to connect to Apple's webDAV...
+[2017-11-20 22:30:47 CST] <Thread-10>  INFO: Successfully connected to Apple's webDAV.
+[2017-11-20 22:30:47 CST] <Thread-10>  INFO: Attempting to create the package's folder on Apple's webDAV: /5/M5QA58FB52/uploading/1291821910-20171120063044-384.itmsp/
+[2017-11-20 22:30:47 CST] <Thread-10>  INFO: Successfully created/set the package's folder on Apple's webDAV.
+[2017-11-20 22:30:47 CST] <Thread-10>  INFO: Determining which files should be uploaded ...
+[2017-11-20 22:30:47 CST] <Thread-10>  INFO: Finished determining which files should be uploaded.
+[2017-11-20 22:30:47 CST] <Thread-10>  INFO: Computing total size of files to upload ...
+[2017-11-20 22:30:47 CST] <Thread-10>  INFO: Done computing total size of files to upload.
+[2017-11-20 22:30:48 CST] <Thread-10>  INFO: Starting upload of file: C:\Users\Henry\AppData\Local\Temp\au\itmsp\1291821910.itmsp\1291821910.ipa ...
+[2017-11-20 22:31:41 CST] <Thread-10>  INFO:      File: 1291821910.ipa 10485760/17469489, 60% completed
+[2017-11-20 22:32:10 CST] <Thread-10>  INFO:      File: 1291821910.ipa 17469489/17469489, 100% completed
+[2017-11-20 22:32:10 CST] <Thread-10>  INFO:   Successfully uploaded file: C:\Users\Henry\AppData\Local\Temp\au\itmsp\1291821910.itmsp\1291821910.ipa
+[2017-11-20 22:32:11 CST] <Thread-10>  INFO: Package upload progress: 99% completed
+[2017-11-20 22:32:11 CST] <Thread-10>  INFO: Finished upload of file: C:\Users\Henry\AppData\Local\Temp\au\itmsp\1291821910.itmsp\1291821910.ipa.
+[2017-11-20 22:32:11 CST] <Thread-10>  INFO: Starting upload of file: C:\Users\Henry\AppData\Local\Temp\au\itmsp\1291821910.itmsp\metadata.xml ...
+[2017-11-20 22:32:11 CST] <Thread-10>  INFO:      File: metadata.xml 529/529, 100% completed
+[2017-11-20 22:32:11 CST] <Thread-10>  INFO:   Successfully uploaded file: C:\Users\Henry\AppData\Local\Temp\au\itmsp\1291821910.itmsp\metadata.xml
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Package upload progress: 100% completed
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Finished upload of file: C:\Users\Henry\AppData\Local\Temp\au\itmsp\1291821910.itmsp\metadata.xml.
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Gathering list of uploaded files from Apple's webDAV...
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Done gathering list of uploaded files from Apple's webDAV...
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Checking if any encryption/compression files are outdated locally ...
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Finished checking if any encryption/compression files are outdated locally.
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Confirming that the previously uploaded files were uploaded correctly ...
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Finished confirming that the previously uploaded files were uploaded correctly.
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Determining which files were not uploaded ...
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Finished determining which files were not uploaded.
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: Done performing upload.
+[2017-11-20 22:32:12 CST] <Thread-10>  INFO: id = 20171120223212-223
+[2017-11-20 22:32:13 CST] <Thread-10>  INFO: Done performing uploadDone notification to Apple.
+[2017-11-20 22:32:13 CST] <Thread-10>  INFO: The package: C:\Users\Henry\AppData\Local\Temp\au\itmsp\1291821910.itmsp has been successfully uploaded.
+[2017-11-20 22:32:13 CST] <Thread-10>  INFO: Verify progress: Operation completed (Step 3/3)
+
+
+
+Package Summary:
+ 
+1 packages were uploaded successfully:
+	C:\Users\Henry\AppData\Local\Temp\au\itmsp\1291821910.itmsp

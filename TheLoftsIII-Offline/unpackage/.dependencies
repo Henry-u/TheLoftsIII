@@ -1,0 +1,277 @@
+{
+  "html/schedule.html": {
+    "href": "html/schedule.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/iconfont.woff",
+      "css/iconfont.ttf",
+      "css/photoswipe.css",
+      "css/default-skin.min.css",
+      "js/config.js",
+      "js/mui.min.js",
+      "js/jquery.min.js",
+      "js/photoswipe.js",
+      "js/photoswipe-ui-default.min.js",
+      "images/icons/ICON_BACK.png"
+    ],
+    "priority": 0
+  },
+  "html/profile.html": {
+    "href": "html/profile.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/iconfont.woff",
+      "css/iconfont.ttf",
+      "css/photoswipe.css",
+      "css/default-skin.min.css",
+      "js/config.js",
+      "js/mui.min.js",
+      "js/jquery.min.js",
+      "js/photoswipe.js",
+      "js/photoswipe-ui-default.min.js",
+      "images/icons/ICON_BACK.png"
+    ],
+    "priority": 1
+  },
+  "html/brochure.html": {
+    "href": "html/brochure.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/iconfont.woff",
+      "css/iconfont.ttf",
+      "css/photoswipe.css",
+      "css/default-skin.min.css",
+      "js/config.js",
+      "js/mui.min.js",
+      "js/jquery.min.js",
+      "js/photoswipe.js",
+      "js/photoswipe-ui-default.min.js",
+      "images/icons/ICON_BACK.png"
+    ],
+    "priority": 2
+  },
+  "html/information.html": {
+    "href": "html/information.html",
+    "resources": [
+      "css/swiper.min.css",
+      "css/photoswipe.css",
+      "css/default-skin.min.css",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "fonts/Broadway.ttf",
+      "fonts/Broadway.woff",
+      "fonts/AxureHandwriting.ttf",
+      "fonts/AxureHandwriting.woff",
+      "images/BG_INFO.jpg",
+      "js/config.js",
+      "js/jquery.min.js",
+      "js/mui.min.js",
+      "js/swiper.min.js",
+      "js/photoswipe.min.js",
+      "js/photoswipe-ui-default.min.js",
+      "images/IMG_AERIALPHOTO.jpg",
+      "images/IMG_LOCATIONMAP.jpg",
+      "images/LOGO_MAIN.png",
+      "images/icons/ICON_HOME.png",
+      "images/icons/ICON_BACK.png",
+      "images/icons/ICON_PREV.png",
+      "images/icons/ICON_NEXT.png",
+      "images/icons/ICON_BROCHURE.png",
+      "images/icons/ICON_MAP.png",
+      "images/icons/ICON_FINISHES.png",
+      "images/icons/ICON_PROFILE.png",
+      "images/IMG_OVERVIEW.png",
+      "images/IMG_OVERVIEW2.png"
+    ],
+    "refer": [
+      "html/schedule.html",
+      "html/profile.html",
+      "html/brochure.html"
+    ],
+    "priority": 0
+  },
+  "html/cgi.html": {
+    "href": "html/cgi.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/iconfont.woff",
+      "css/iconfont.ttf",
+      "css/swiper.min.css",
+      "css/photoswipe.css",
+      "css/default-skin.min.css",
+      "js/config.js",
+      "js/template.js",
+      "js/utils.js",
+      "js/mui.min.js",
+      "js/jquery.min.js",
+      "js/update.js",
+      "js/swiper.min.js",
+      "js/iscroll.js",
+      "js/photoswipe.js",
+      "js/photoswipe-ui-default.min.js",
+      "images/icons/ICON_HOME.png",
+      "images/icons/ICON_FULLSCREEN.png",
+      "images/icons/ICON_ARROW_LEFT.png",
+      "images/icons/ICON_ARROW_RIGHT.png",
+      "images/icons/ICON_RESTORESCREEN.png"
+    ],
+    "priority": 1
+  },
+  "vr/tour.html": {
+    "href": "vr/tour.html",
+    "resources": [
+      "vr/static/images/skin1/vr-btn-desc.png",
+      "vr/static/images/skin1/vr-btn-share.png",
+      "vr/static/css/zui.min.css",
+      "vr/static/fonts/zenicon.woff",
+      "vr/static/css/zui-theme.css",
+      "vr/static/css/response.css",
+      "vr/static/css/redefine.css",
+      "vr/static/images/skin1/radar_open.png",
+      "vr/static/images/skin1/full-screen.png",
+      "vr/static/images/skin1/full-stop.png",
+      "vr/static/images/skin1/vrmode.png",
+      "vr/static/images/skin1/bgmusic-open.png",
+      "vr/static/images/skin1/bgmusic-close.png",
+      "vr/static/images/skin1/music-open.png",
+      "vr/static/images/skin1/music-close.png",
+      "vr/static/images/skin1/gyro-open.png",
+      "vr/static/images/skin1/gyro-close.png",
+      "vr/static/images/kr/radar-out.png",
+      "vr/static/css/alivideo.css",
+      "vr/static/js/jquery-1.9.1.js",
+      "vr/static/js/zui.js",
+      "vr/tour.js",
+      "vr/static/js/vrshow.js",
+      "vr/tour.swf",
+      "vr/static/js/alivideo.js",
+      "vr/static/js/object.js",
+      "vr/static/images/skin1/vr-btn-scene.png"
+    ],
+    "priority": 2
+  },
+  "html/back.html": {
+    "href": "html/back.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/jquery.min.js",
+      "js/mui.min.js",
+      "images/icons/ICON_BACK.png"
+    ],
+    "priority": 3
+  },
+  "html/vrerror.html": {
+    "href": "html/vrerror.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/jquery.min.js",
+      "js/mui.min.js"
+    ],
+    "priority": 4
+  },
+  "html/vr.html": {
+    "href": "html/vr.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/iconfont.woff",
+      "css/iconfont.ttf",
+      "js/mui.min.js",
+      "js/jquery.min.js"
+    ],
+    "refer": [
+      "html/back.html",
+      "html/vrerror.html"
+    ],
+    "priority": 3
+  },
+  "html/floorplan.html": {
+    "href": "html/floorplan.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "css/iconfont.woff",
+      "css/iconfont.ttf",
+      "css/photoswipe.css",
+      "css/default-skin.min.css",
+      "js/mui.min.js",
+      "js/jquery.min.js",
+      "js/photoswipe.min.js",
+      "js/photoswipe-ui-default.min.js",
+      "images/icons/ICON_BACK.png",
+      "images/icons/ICON_RESTORESCREEN.png"
+    ],
+    "priority": 4
+  },
+  "html/aerialplan.html": {
+    "href": "html/aerialplan.html",
+    "resources": [
+      "images/icons/ICON_ARROW_DOWN.png",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "css/swiper.min.css",
+      "css/photoswipe.css",
+      "css/default-skin.min.css",
+      "css/iconfont.css",
+      "css/iconfont.woff",
+      "css/iconfont.ttf",
+      "js/config.js",
+      "js/photoswipe.js",
+      "js/photoswipe-ui-default.min.js",
+      "js/jquery.min.js",
+      "js/mui.min.js",
+      "js/swiper.min.js",
+      "js/template.js",
+      "fonts/Broadway.ttf",
+      "fonts/Broadway.woff",
+      "images/PARTS_GRADIENT.png",
+      "images/icons/ICON_FLOORPLAN.png",
+      "images/icons/ICON_VR2.png",
+      "images/icons/ICON_RESTORESCREEN.png",
+      "images/icons/ICON_HOME.png",
+      "images/icons/ICON_FULLSCREEN.png"
+    ],
+    "refer": [
+      "html/vr.html",
+      "html/floorplan.html"
+    ],
+    "priority": 3
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "fonts/Broadway.ttf",
+      "fonts/Broadway.woff",
+      "images/BG_HOME.jpg",
+      "js/mui.min.js",
+      "js/jquery.min.js",
+      "js/update.js",
+      "images/LOGO_LANDPEARL.png",
+      "images/LOGO_LWPHOENIX.png",
+      "images/icons/ICON_VIEW.png",
+      "images/icons/ICON_INFO.png",
+      "images/icons/ICON_VR.png"
+    ],
+    "refer": [
+      "html/information.html",
+      "html/cgi.html",
+      "vr/tour.html",
+      "html/aerialplan.html"
+    ],
+    "priority": 0
+  }
+}

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CGI View</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<link rel="stylesheet" href="../css/photoswipe.css" />
+		<link rel="stylesheet" href="../css/default-skin.min.css" />
+
+		<style>
+			.left {
+				width: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				height: 100%;
+				z-index: 59;
+				background-color: #000;
+			}
+			
+			.left img {
+				width: auto;
+				height: 100%;
+				display: block;
+				max-width: 100%;
+				margin: 0 auto;
+			}
+			
+			.right {
+				width: 86%;
+				position: absolute;
+				z-index: 99;
+				height: 80px;
+				bottom: 0;
+				left: 7%;
+			}
+			
+			.right .mui-scroll-wrapper .mui-scroll {}
+			
+			.right .mui-scroll-wrapper .mui-scroll img {
+				display: inline-block;
+				margin: 5px;
+				width: 100px;
+				height: 70px;
+			}
+			
+			.back {
+				position: fixed;
+				z-index: 99;
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+				right: 10px;
+				top: 10px;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.back img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.icons {
+				position: fixed;
+				z-index: 99;
+				width: 36px;
+				height: 36px;
+				bottom: 22px;
+				text-align: center;
+			}
+			
+			.icons img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.icons.icon-left {
+				left: 6px;
+			}
+			
+			.icons.icon-right {
+				right: 6px;
+			}
+			
+			.icon {
+				font-size: 25px;
+				color: white;
+			}
+			
+			.buttom-bg {
+				width: 100%;
+				position: absolute;
+				z-index: 98;
+				height: 80px;
+				background: #000;
+				opacity: 0.6;
+				bottom: 0;
+			}
+			
+			.fullscreen {
+				position: absolute;
+				z-index: 99;
+				width: 44px;
+				height: 44px;
+				right: 10px;
+				top: 60px;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.fullscreen img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				margin: 5% auto;
+			}
+			
+			.narrow {
+				position: absolute;
+				z-index: 99;
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+				left: 10px;
+				bottom: 10px;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.narrow.hidden {
+				display: none;
+			}
+			
+			.narrow img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				margin: 5% auto;
+			}
+			
+			.icon {
+				font-size: 25px;
+				color: #fff;
+			}
+			.swiper-container{
+				height: 100%;
+			} 
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+			<div class="left">
+				<!--轮播图-->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+
+					</div>
+				</div>
+			</div>
+			<div class="back">
+				<img src="../images/icons/ICON_HOME.png" alt="" />
+			</div>
+			<div class="fullscreen">
+				<img src="../images/icons/ICON_FULLSCREEN.png" />
+			</div>
+			<div class="right">
+				<div id='wrapper' class="mui-scroll-wrapper">
+					<div class="mui-scroll" style="white-space: nowrap;">
+					</div>
+				</div>
+			</div>
+			<div class="icons icon-left">
+				<img src="../images/icons/ICON_ARROW_LEFT.png" alt="" />
+			</div>
+			<div class="icons icon-right">
+				<img src="../images/icons/ICON_ARROW_RIGHT.png" alt="" />
+			</div>
+		</div>
+		<div class="buttom-bg"></div>
+		<!--图片预览dom-->
+		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class='narrow'>
+				<img src="../images/icons/ICON_RESTORESCREEN.png" alt="" />
+			</div>
+			<!-- Background of PhotoSwipe. 
+         It's a separate element, as animating opacity is faster than rgba(). -->
+			<div class="pswp__bg"></div>
+
+			<!-- Slides wrapper with overflow:hidden. -->
+			<div class="pswp__scroll-wrap">
+
+				<!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+				<div class="pswp__container">
+					<!-- don't modify these 3 pswp__item elements, data is added later on -->
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+				</div>
+
+				<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+				<div class="pswp__ui pswp__ui--hidden">
+
+					<div class="pswp__top-bar">
+
+						<!--  Controls are self-explanatory. Order can be changed. -->
+
+						<div class="pswp__counter"></div>
+
+						<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+						<button class="pswp__button pswp__button--share" title="Share"></button>
+
+						<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+						<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+						<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+						<!-- element will get class pswp__preloader--active when preloader is running -->
+						<div class="pswp__preloader">
+							<div class="pswp__preloader__icn">
+								<div class="pswp__preloader__cut">
+									<div class="pswp__preloader__donut"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+						<div class="pswp__share-tooltip"></div>
+					</div>
+
+					<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+					<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+					<div class="pswp__caption">
+						<div class="pswp__caption__center"></div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		<script type="text/html" id='list-template'>
+			<!--支持循环，需要重复图片节点-->
+			{{each data as value i}}
+			<div class="swiper-slide"><img src="{{value.img_url}}" class="imgHeight" /></div>
+			{{/each}}
+		</script>
+		<script id="list1-template" type="text/html">
+			{{each data as value i}}
+			<img name="img" class="rightImg" src="{{value.thumb_img_url}}" {{if i==0}}style="margin-top:3px;outline:solid 2px white" {{/if}} /> {{/each}}
+		</script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/utils.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/update.js"></script>
+		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/iscroll.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/photoswipe.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/photoswipe-ui-default.min.js" type="text/javascript" charset="utf-8"></script>
+ 
+		<script>
+			//初始化项目
+			mui.init();
+			mui.plusReady(function() {	
+				//接口对接  
+				$.ajax({
+					url: baseUrl + '/intf.php?module=interface&act=getCGIList&projectNo=' + projectNo, 
+					success: 
+						function(data) {	
+							plus.storage.setItem("cgi_json", data);
+						},
+					complete:
+						function() {
+							var data = plus.storage.getItem("cgi_json");
+							data = JSON.parse(data);
+							if(data.code == 0) {
+								$.each(data.data, function(i, value) {
+									var str = value.thumb_img_url.split('?')[0]
+									var filename = str.substring(str.lastIndexOf("/") + 1, str.length);
+									var relativePath = "_downloads/cgi/thumb/" + filename;
+									var filename2 = value.img_url.substring(value.img_url.lastIndexOf("/") + 1, value.img_url.length);
+									var relativePath2 = "_downloads/cgi/images/" + filename2;
+									//console.log(filename2)
+									//console.log(relativePath)
+									//检查图片是否已存在 
+									plus.io.resolveLocalFileSystemURL(relativePath, function(entry) {
+										//console.log("图片存在,直接设置=" + relativePath);
+										//如果文件存在,则直接设置本地图片
+										var sd_path = plus.io.convertLocalFileSystemURL(relativePath);
+										value.thumb_img_url = sd_path;
+									}, function(e) {
+										//console.log("图片不存在,联网下载=" + relativePath);
+										//如果文件不存在,联网下载图片
+										//创建下载任务
+										var dtask = plus.downloader.createDownload(value.thumb_img_url, {
+											filename: "_downloads/cgi/thumb/" + filename
+										}, function(d, status) {
+											if(status == 200) {
+												//下载成功
+												//console.log("下载成功=" + d.filename);
+											} else {
+												//下载失败,需删除本地临时文件,否则下次进来时会检查到图片已存在
+												//console.log("下载失败=" + status + "==" + relativePath);
+											}
+										});
+										//启动下载任务
+										dtask.start();
+									});
+									//检查图片是否已存在 
+									plus.io.resolveLocalFileSystemURL(relativePath2, function(entry) {
+										//console.log("图片存在,直接设置=" + relativePath2);
+										//如果文件存在,则直接设置本地图片
+										var sd_path = plus.io.convertLocalFileSystemURL(relativePath2);
+										value.img_url = sd_path;
+									}, function(e) {
+										//console.log("图片不存在,联网下载=" + relativePath2);
+										//如果文件不存在,联网下载图片
+										//创建下载任务
+										var dtask2 = plus.downloader.createDownload(value.img_url, {
+											filename: "_downloads/cgi/images/" + filename2
+										}, function(d, status) {
+											if(status == 200) {
+												//下载成功 
+												//console.log("下载成功=" + d.filename);
+											} else {
+												//下载失败,需删除本地临时文件,否则下次进来时会检查到图片已存在
+												//console.log("下载失败=" + status + "==" + relativePath);
+											}
+										});
+										//启动下载任务
+										dtask2.start();
+									});
+									//console.log(JSON.stringify(value));
+								});
+							}
+							setTimeout(function() {
+								//console.log(JSON.stringify(data))
+								var html = template('list-template', data);
+								//$('.mui-slider-loop').empty().append(html)
+								var list = data.data;
+								var html1 = template('list1-template', data);
+								$('.swiper-wrapper').empty().append(html)
+								$('.right .mui-scroll').empty().append(html1)
+								//初始化swiper 
+								var index = 0
+								var mySwiper = new Swiper('.swiper-container', {
+									loop: false,
+									initialSlide: 0,
+									onSlideChangeEnd: function(swiper) {
+										var event = swiper.activeIndex;
+										addborders(event);								
+										index = event;
+									}
+								})
+								document.addEventListener('touchmove', function(e) {
+									e.preventDefault();
+								}, isPassive() ? {
+									capture: false,
+									passive: false
+								} : false);
+								//设置轮播高度
+								$(function() {
+									$(".imgHeight").css("height", $(window).height() + "px");
+								})
+								var imgHeights = $(".imgHeight").length - 2;
+								//点击图片时添加outline
+								function addborder(x) {
+									for(var i = 0; i < imgs.length; i++) {
+										imgs[i].style.outline = "solid 0px black";
+									}
+									imgs[x].style.outline = "solid 2px white";
+								}
+	
+								//图片滑动右侧随动事件,添加outline
+								//document.querySelector('.mui-slider').addEventListener('slide', function(event) {
+								//var event = event.detail.slideNumber;
+								//addborders(event);
+								//index = event;
+								//});
+								var photoSwiper;
+								//图片预览
+								var openPhotoSwipe = function(items, index) {
+									var pswpElement = document.querySelectorAll('.pswp')[0];
+									var options = {
+										history: false,
+										focus: false,
+										index: index,
+										maxSpreadZoom: 8,
+										spacing:0,
+										showAnimationDuration: 0,
+										hideAnimationDuration: 0,
+										closeOnScroll:false,
+						                pinchToClose:false,
+						                closeOnVerticalDrag:false
+									}; 
+									photoSwiper = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+									photoSwiper.init();
+								}; 
+								//打开大图
+								$('.fullscreen').on('click', function() {
+									var items = [];
+									$('.imgHeight').each(function(i, value) {
+										var phoneWidth = window.screen.width;
+										var phoneHeight = window.screen.height;
+										var w, h;
+										if(phoneWidth > phoneHeight) {
+											w = phoneWidth;
+											h = phoneHeight;
+										} else {
+											w = phoneHeight;
+											h = phoneWidth;
+										}
+										var item = {
+											src: $(value).attr('src'),
+											w: w,
+											h: h
+										} 
+	                                    items.push(item);					
+									})							
+									openPhotoSwipe(items, index);
+								})
+								$('.narrow').on('click', function(e) {
+									e.stopPropagation();
+									photoSwiper.close();
+	
+									return false
+								})
+								//图片滑动时为右侧图片添加outline
+								function addborders(event) {
+									for(var i = 0; i < imgs.length; i++) {
+										imgs[i].style.outline = "solid 0px black";
+									}
+									imgs[event].style.outline = "solid 2px white";
+								}
+								$('.icon-right').on('tap', function() {
+									var nowX = myScroll.x
+									var nextX = nowX - 200;
+									myScroll.scrollTo(nextX, 0, 1000)
+								})
+								$('.icon-left').on('tap', function() {
+									var nowX = myScroll.x
+									var nextX = nowX + 200;
+									myScroll.scrollTo(nextX, 0, 1000)
+								})
+								var imgs;
+								mySwiper.updateSlidesSize();
+								mySwiper.slideTo(0, 0, false)
+								//获得slider插件对象 
+								$('.right .mui-scroll').css('width', 110 * $('.rightImg').length + 60)
+								myScroll = new IScroll('#wrapper', {
+									scrollX: true,
+									scrollY: false,
+									scrollbars: 'custom'
+								});
+								//右侧图片点击效果						
+								imgs = document.getElementsByName("img");
+								var flag = 0;
+								for(var i = 0; i < imgs.length; i++) {
+									imgs[i].index = i;
+									imgs[i].addEventListener("tap", function() {
+										flag = this.index;
+										addborder(flag);
+										//右侧图点击与左边轮播绑定事件
+										mySwiper.slideTo(flag, 0, true)
+									})
+								}
+							}, 200)
+						}
+				});
+			})
+			//返回事件
+			document.getElementsByClassName("back")[0].addEventListener("tap", function() {
+				mui.back()
+			})
+		</script>
+	</body>
+
+</html>
