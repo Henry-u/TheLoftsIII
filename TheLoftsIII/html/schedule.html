@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Finish Of Schedule</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" href="../css/photoswipe.css" />
+		<link rel="stylesheet" href="../css/default-skin.min.css" />
+		<style>
+			.back {
+				position: fixed;
+				z-index: 99;
+				width: 44px;
+				height: 44px;
+				left: 10px;
+				z-index: 109999;
+				bottom: 10px;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.back img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.backTo {
+				position: absolute;
+				width: 44px;
+				height: 44px;
+				right: 10px;
+				bottom: 10px;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.backTo img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.icon {
+				font-size: 25px;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+
+			<!--图片预览dom-->
+			<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class='narrow'>
+					<img src="../images/icons/ICON_BACK.png" alt="" />
+				</div>
+				<!-- Background of PhotoSwipe. 
+         				It's a separate element, as animating opacity is faster than rgba(). -->
+				<div class="pswp__bg"></div>
+
+				<!-- Slides wrapper with overflow:hidden. -->
+				<div class="pswp__scroll-wrap">
+
+					<!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+					<div class="pswp__container">
+						<!-- don't modify these 3 pswp__item elements, data is added later on -->
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+					</div>
+
+					<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+					<div class="pswp__ui pswp__ui--hidden">
+
+						<div class="pswp__top-bar">
+							<div class="back">
+								<img src="../images/icons/ICON_BACK.png" />
+							</div>
+							<div class="pswp__counter"></div>
+
+							<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+							<button class="pswp__button pswp__button--share" title="Share"></button>
+
+							<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+							<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+							<div class="pswp__preloader">
+								<div class="pswp__preloader__icn">
+									<div class="pswp__preloader__cut">
+										<div class="pswp__preloader__donut"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+							<div class="pswp__share-tooltip"></div>
+						</div>
+
+						<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+						<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+						<div class="pswp__caption">
+							<div class="pswp__caption__center"></div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/photoswipe.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/photoswipe-ui-default.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				$.ajax({
+					url: baseUrl + '/intf.php?module=interface&act=getSOFList&projectNo=' + projectNo, 
+					success: 
+						function(data) {
+							//console.log(JSON.stringify(data));
+							plus.storage.setItem("schedule_json", data);
+						},
+					complete:
+						function() {
+							var data = plus.storage.getItem("schedule_json");
+							//图片预览
+							data = JSON.parse(data)
+							$.each(data.data, function(i, value) {
+								var str = value.img_url;
+								var filename = str.substring(str.lastIndexOf("/") + 1, str.length);
+								var relativePath = "_downloads/schedule/images/" + filename;
+								//检查图片是否已存在 
+								plus.io.resolveLocalFileSystemURL(relativePath, function(entry) {
+									//									console.log("图片存在,直接设置=" + relativePath);
+									//如果文件存在,则直接设置本地图片
+									var sd_path = plus.io.convertLocalFileSystemURL(relativePath);
+									value.img_url = sd_path;
+									//									console.log(data)
+								}, function(e) {
+									//									console.log("图片不存在,联网下载=" + relativePath);
+									//如果文件不存在,联网下载图片
+									//创建下载任务
+									var dtask = plus.downloader.createDownload(str, {
+										filename: "_downloads/schedule/images/" + filename
+									}, function(d, status) {
+										if(status == 200) {
+											//下载成功
+											//											console.log("下载成功=" + d.filename);
+										} else {
+											//下载失败,需删除本地临时文件,否则下次进来时会检查到图片已存在
+											console.log("下载失败=" + status + "==" + relativePath);
+										}
+									});
+									//启动下载任务
+									dtask.start();
+								});
+		
+							})
+
+							var openPhotoSwipe = function(items, index) {
+								var pswpElement = document.querySelectorAll('.pswp')[0];
+								var options = {
+									history: false,
+									focus: false,
+									index: index,
+									maxSpreadZoom: 8,
+									showAnimationDuration: 0,
+									hideAnimationDuration: 0,
+									closeOnScroll: false,
+									pinchToClose: false,
+									closeOnVerticalDrag: false
+								};
+								photoSwiper = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+								photoSwiper.init();
+							};
+							var items = [];
+							var phoneWidth = window.screen.width;
+							var phoneHeight = window.screen.height;
+							var w, h;
+							if(phoneWidth > phoneHeight) {
+								w = phoneWidth;
+								h = phoneHeight;
+							} else {
+								w = phoneHeight;
+								h = phoneWidth;
+							}
+							setTimeout(function() {
+								$.each(data.data, function(i, value) {
+									var item = {
+										src: value.img_url,
+										w: w,
+										h: h
+									}
+									items.push(item)
+		
+								});
+								openPhotoSwipe(items, 0);
+							}, 200)
+						}
+				})
+			})
+
+			document.getElementsByClassName("back")[0].addEventListener("tap", function() {
+				mui.back();
+			})
+		</script>
+	</body>
+
+</html>

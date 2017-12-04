@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>VR View</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/iconfont.css" rel="stylesheet" />
+         <style>
+         	#body{
+         		overflow: hidden;
+         	}
+         </style>
+	</head>
+
+	<body id='body'>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				var vrUrl = self.name;
+		        var subpage_style={
+		            	 top: '0px',
+				         bottom: '0px',
+				         errorPage: "vrerror.html"
+		            }     
+				var sub = plus.webview.create(vrUrl,vrUrl,subpage_style);
+		
+				var subpage_style2={
+		            	 top: '10px',
+				         height: '44px',
+				         width:'44px',
+				         left:'10px',
+				         background:"transparent"
+		            }
+					var sub2 = plus.webview.create('back.html', 'back.html', subpage_style2);
+					self.append(sub); 
+				    self.append(sub2);
+	
+			})
+	
+		</script>
+	</body>
+
+</html>

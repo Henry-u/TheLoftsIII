@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta charset="UTF-8">
+		<title>Error Page</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<style>
+			body{
+				background-color: black;
+			}
+			
+			.error{
+				position: absolute;
+				top: 45%;
+				left: 10%;
+				right: 10%;
+			}
+			
+			.msg{
+				color: white;
+				font-size: small;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="error">
+			<span class="msg"></span>
+		</div>
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				var url = self.id;
+				$('.msg').text('This url (' + url + ') could not be opened!');
+			})
+    	</script>
+	</body>
+</html> 

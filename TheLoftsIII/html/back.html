@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<style>
+			body{
+				background-color: transparent;
+			}
+			#back{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: transparent !important;
+			}
+			#back img{
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="back">
+			<img src="../images/icons/ICON_BACK.png" alt="" />
+		</div>
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('#back').on('tap',function(){
+				mui.back()
+			})
+		</script>
+	</body>
+</html> 

@@ -1,0 +1,421 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Information</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<!--<link rel="stylesheet" href="../css/iconfont.css" />-->
+        <link rel="stylesheet" href="../css/photoswipe.css" />
+		<link rel="stylesheet" href="../css/default-skin.min.css" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			@font-face {
+				font-family: 'broadway';
+				src: url('../fonts/Broadway.ttf');
+				src: url('../fonts/Broadway.woff');
+			}
+			
+			@font-face {
+				font-family: 'axure';
+				src: url('../fonts/AxureHandwriting.ttf');
+				src: url('../fonts/AxureHandwriting.woff');
+			}
+			
+			body {
+				background: white;
+			}
+			
+			.mui-content {
+				position: absolute;
+				padding: 30px 40px 40px 40px;
+				width: 100%;
+				height: 100%;
+				background-image: url(../images/BG_INFO.jpg);
+				background-size: 100% 100%;
+			}
+			
+			.back {
+				position: absolute;
+				z-index: 99;
+				border-radius: 50%;
+				right: 10px;
+				top: 10px;
+			}
+			
+			.back img {
+				width: 44px;
+			}
+			
+			.icon {
+				font-size: 25px;
+				color: white;
+			}
+			
+			.logo {
+				width: 210px;
+			}
+			
+			.text {
+				padding-left: 4px;
+				color: #a18a53;
+				font-style: italic;
+				font-weight: bold;
+			}
+			
+			h4,
+			button {
+				font-family: broadway, "arial black";
+			}
+			
+			p,
+			h6 {
+				font-family: axure, "arial black";
+			}
+			
+			p,
+			h4,
+			button,
+			h6 {
+				color: black;
+			}
+			
+			.max {
+				position: absolute;
+				right: 10px;
+				bottom: 4px;
+			}
+			
+			.max .text {
+				color: #a18a53;
+				font-weight: bold;
+				font-style: normal;
+				position: relative;
+				bottom: 16px;
+				right: 6px;
+			}
+			
+			.max img {
+				width: 44px;
+			}
+			
+			.modal {
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background-color: #000;
+				opacity: .6;
+				display: none;
+			}
+			
+			.map-container {
+				position: absolute;
+				width: 80%;
+				height: 80%;
+				top: 10%;
+				left: 10%;
+				background-color: #fff;
+				z-index: 100;
+				display: block;
+				opacity: 0;
+			}
+			
+			.swiper-container {
+				width: 90%;
+				z-index: 110;
+				height: 180px;
+			}
+			
+			.swiper-container img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.swiper-box {
+				position: relative;
+			}
+			
+			.swiper-box .prev {
+				position: absolute;
+				top: 30px;
+				height: 120px;
+				display: none;
+				left: -20px;
+			}
+			
+			.swiper-box .next {
+				position: absolute;
+				height: 120px;
+				right: -20px;
+				top: 30px 
+			}
+			.swiper-box img{
+				height: 100%;
+			}
+			.img-list {
+				width: 90%;
+				margin: 0 auto;
+				display: flex;
+			}
+			 
+			.img-list .item {
+				flex: 1;
+				text-align: center;
+			}
+			
+			.img-list .item img {
+				width: 56px;
+			}
+			.img-list .item .label{
+				font-size: 12px;
+				color: #a18a53;
+				font-weight: bold;
+			}
+			.narrow {
+				position: absolute;
+				z-index: 99;
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+				left: 10px;
+				bottom: 10px;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.narrow.hidden {
+				display: none;
+			}
+			
+			.narrow img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				margin: 5% auto;
+			}
+			#container{
+				z-index: 1050;
+				position: fixed;
+				transform: translate3d(-50%, -50%, 0px);
+				top: 50%;
+				left: 50%;
+				width: 90%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="body" class="mui-content">
+			<div id="container">
+			<img class="logo" src="../images/LOGO_MAIN.png" alt="" />
+			<div class="swiper-box">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="../images/IMG_OVERVIEW.png" class="imgHeight" /></div>
+						<div class="swiper-slide"><img src="../images/IMG_OVERVIEW2.png" class="imgHeight" /></div>
+					</div>
+				</div>
+				<div class="prev"><img src="../images/icons/ICON_PREV.png" /></div>
+				<div class="next"><img src="../images/icons/ICON_NEXT.png" /></div>
+			</div>
+			<div class="img-list">
+				<div class="item">
+					<img class="brochure" src="../images/icons/ICON_BROCHURE.png" alt="" />
+				    <div class="label">Brochure</div>
+				</div>
+				<div class="item">
+					<img class="map" src="../images/icons/ICON_MAP.png" alt="" />
+					<div class="label">Map</div>
+				</div>
+				<div class="item">
+					<img class="finishes" src="../images/icons/ICON_FINISHES.png" alt="" />
+				    <div class="label">Finish Of Schedule</div>
+				</div>
+				<div class="item">
+					<img class="profile" src="../images/icons/ICON_PROFILE.png" alt="" />
+					<div class="label">Development Profile</div>
+				</div>
+			</div>
+			</div>
+			<div class="back">
+				<img src="../images/icons/ICON_HOME.png" />
+			</div>
+   		</div>
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class='narrow'>
+				<img src="../images/icons/ICON_BACK.png" alt="" />
+			</div>
+			<!-- Background of PhotoSwipe. 
+         It's a separate element, as animating opacity is faster than rgba(). -->
+			<div class="pswp__bg"></div>
+
+			<!-- Slides wrapper with overflow:hidden. -->
+			<div class="pswp__scroll-wrap">
+
+				<!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+				<div class="pswp__container">
+					<!-- don't modify these 3 pswp__item elements, data is added later on -->
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+				</div>
+
+				<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+				<div class="pswp__ui pswp__ui--hidden">
+
+					<div class="pswp__top-bar">
+
+						<!--  Controls are self-explanatory. Order can be changed. -->
+
+						<div class="pswp__counter"></div>
+
+						<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+						<button class="pswp__button pswp__button--share" title="Share"></button>
+
+						<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+						<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+						<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+						<!-- element will get class pswp__preloader--active when preloader is running -->
+						<div class="pswp__preloader">
+							<div class="pswp__preloader__icn">
+								<div class="pswp__preloader__cut">
+									<div class="pswp__preloader__donut"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+						<div class="pswp__share-tooltip"></div>
+					</div>
+
+					<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+					<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+					<div class="pswp__caption">
+						<div class="pswp__caption__center"></div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/photoswipe.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/photoswipe-ui-default.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			$(function() {
+				var mySwiper = new Swiper('.swiper-container', {
+					loop: false,
+					initialSlide: 0,
+					onSlideChangeEnd: function(swiper) {
+						var event = swiper.activeIndex;
+						if(event == 1) {
+							$('.prev').show()
+							$('.next').hide()
+						} else {
+							$('.next').show()
+							$('.prev').hide()
+						}
+					}
+				})
+				$('#body').on('click', '.next', function() {
+					mySwiper.slideNext()
+				})
+				$('#body').on('click', '.prev', function() {
+					mySwiper.slidePrev()
+				})
+				document.getElementsByClassName("back")[0].addEventListener("tap", function() {
+                    mui.back()
+				})
+				//tu图片预览
+				//图片预览
+				var openPhotoSwipe = function(items, index) {
+					var pswpElement = document.querySelectorAll('.pswp')[0];
+					var options = {
+						history: false,
+						focus: false,
+						index: index,
+						spacing:0,
+						maxSpreadZoom: 8,
+						showAnimationDuration: 0,
+						hideAnimationDuration: 0,
+						closeOnScroll:false,
+						pinchToClose:false,
+						closeOnVerticalDrag:false
+					};
+					photoSwiper = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+					photoSwiper.init();
+				};
+				var items = [];			
+				var phoneWidth = window.screen.width;
+				var phoneHeight = window.screen.height;
+				var w, h;
+				if(phoneWidth > phoneHeight) {
+					w = phoneWidth;
+					h = phoneHeight;
+				} else {
+					w = phoneHeight;
+					h = phoneWidth;
+				}
+				var item = {
+					src: "../images/IMG_AERIALPHOTO.jpg",
+					w: w,
+					h: h
+				} 
+				var item1 ={
+					src: "../images/IMG_LOCATIONMAP.jpg",
+					w: w,
+					h: h
+				}
+				items.push(item)
+				items.push(item1)
+			   //打开地图图片
+				$('.map').on('click', function() {
+					openPhotoSwipe(items, 0);
+				})
+			    //关闭地图图片
+			    $('.narrow').on('click', function(e) {
+					e.stopPropagation();
+					photoSwiper.close();
+					return false
+				})
+			    //查看图片
+			    $('.brochure').on('tap',function(){
+		   	   		mui.openWindow({
+			   	   		url:'brochure.html',
+			   	   		id:'brochure.html'
+		   	   		})
+			    })
+			    //查看图片
+			    $('.finishes').on('tap',function(){
+		   	   		mui.openWindow({
+			   	   		url:'schedule.html',
+			   	   		id:'schedule.html'
+		   	   		})
+			    })
+			    //查看图片
+			    $('.profile').on('tap',function(){
+			   	    mui.openWindow({
+			   	   		url:'profile.html',
+			   	   		id:'profile.html'
+		   			})
+			    })
+			})
+		</script>
+	</body>
+
+</html>
